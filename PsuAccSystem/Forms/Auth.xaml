@@ -1,0 +1,47 @@
+﻿<Window x:Class="PsuAccSystem.Forms.Auth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PsuAccSystem.Forms"
+        mc:Ignorable="d"
+        Title="Вход в систему" 
+        Height="310" 
+        Width="285"
+        WindowStartupLocation="CenterScreen">
+    <Grid Style="{StaticResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1">
+            <StackPanel VerticalAlignment="Center"
+                                Margin="5">
+                <TextBlock Text="Логин"/>
+                <TextBox Style="{StaticResource AuthTextBox}"/>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Center"
+                        Margin="5">
+                <TextBlock Text="Пароль"/>
+                <TextBox Style="{StaticResource AuthTextBox}"/>
+            </StackPanel>
+
+            <Button Style="{StaticResource AuthButton}"
+                    Content="OK"
+                    BorderThickness="0"
+                    BorderBrush="#DF2626"
+                    Margin="0, 15, 0, 0" />
+
+        </StackPanel>
+    </Grid>
+</Window>
