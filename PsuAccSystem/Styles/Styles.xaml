@@ -2,34 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:PsuAccSystem.Styles">
 
-    <Style TargetType="Window">
-        <Setter Property="FontFamily" Value="Verdana"/>
-    </Style>
-    
-    <!--<Style TargetType="Border">
-        <Setter Property="CornerRadius" Value="10"/>
-        <Setter Property="BorderThickness" Value="0"/>
-    </Style>-->
-
-    <Style x:Key="AuthTextBox" TargetType="TextBox">
-        <Setter Property="Height" Value="24"/>
-        <Setter Property="Width" Value="206"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="3,0,0,0"/>
-    </Style>
-
-    <Style x:Key="AuthButton" TargetType="Button">
-        <Setter Property="Width" Value="84"/>
-        <Setter Property="Height" Value="34"/>
-        <Setter Property="Background" Value="#DF2626"/>
-        <Setter Property="Foreground" Value="White"/>
-
-    </Style>
-
-    <Style x:Key="GridStyle" TargetType="Grid">
-        <Setter Property="Background" Value="#DADFDF"/>
-    </Style>
-
     <SolidColorBrush x:Key="Button.MouseOver.Background" Color="BurlyWood"/>
     <SolidColorBrush x:Key="Button.MouseOver.Border" Color="BurlyWood"/>
     <SolidColorBrush x:Key="Button.Pressed.Background" Color="BurlyWood"/>
@@ -40,6 +12,7 @@
     <SolidColorBrush x:Key="DarkGray" Color="#778A8A"/>
     <SolidColorBrush x:Key="LightGray" Color="#91A1A1"/>
     <SolidColorBrush x:Key="TooLightGray" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="Green" Color="#1DC03E"/>
 
     <Style TargetType="Button">
         <Setter Property="Template">
@@ -57,7 +30,59 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="Button.IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{StaticResource Green}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource LightGray}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="10"
+                            BorderBrush="{StaticResource DarkGray}"
+                            BorderThickness="1">
+                        <ScrollViewer Margin="0"
+                    x:Name="PART_ContentHost" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Window">
+        <Setter Property="FontFamily" Value="Verdana"/>
+    </Style>
+    
+    <!--<Style TargetType="Border">
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>-->
+
+    <Style x:Key="AuthTextBox" TargetType="TextBox"  BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="206"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="3,0,0,0"/>
+    </Style>
+
+    <Style x:Key="AuthButton" TargetType="Button"  BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="84"/>
+        <Setter Property="Height" Value="34"/>
+        <Setter Property="Background" Value="#DF2626"/>
+        <Setter Property="Foreground" Value="White"/>
+
+    </Style>
+
+    <Style x:Key="GridStyle" TargetType="Grid">
+        <Setter Property="Background" Value="#DADFDF"/>
+    </Style>
+
 
     <Style x:Key="AddButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Width" Value="190"/>
@@ -65,17 +90,32 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="Content" Value="+"/>
-        
-        <Style.Triggers>
-            <Trigger Property="Button.IsMouseOver" Value="true">
-                <Setter Property="Background" Value="{StaticResource LightGray}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource LightGray}"/>
-            </Trigger>
-        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="GrayButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="190"/>
+        <Setter Property="Background" Value="{DynamicResource DarkGray}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="0,0,5,0"/>
+        <Setter Property="Width" Value="70"/>
+        <Setter Property="Height" Value="24"/>
+    </Style>
+
+    <Color x:Key="DisabledBorderLightColor">#FFFCFCFC</Color>
+
+    <Style TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="{StaticResource DarkGray}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
     </Style>
 
 
-    <Color x:Key="DisabledBorderLightColor">#FFFCFCFC</Color>
-   
+    <Style TargetType="DataGridCell">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
 
 </ResourceDictionary>

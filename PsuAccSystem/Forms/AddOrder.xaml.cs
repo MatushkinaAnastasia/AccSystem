@@ -13,20 +13,13 @@ using System.Windows.Shapes;
 namespace PsuAccSystem.Forms
 {
 	/// <summary>
-	/// Логика взаимодействия для Auth.xaml
+	/// Логика взаимодействия для AddOrder.xaml
 	/// </summary>
-	public partial class Auth : Window
+	public partial class AddOrder : Window
 	{
-		public Auth()
+		public AddOrder()
 		{
 			InitializeComponent();
-		}
-
-		private void Enter(object sender, RoutedEventArgs e)
-		{
-			var viewOrder = new ViewOrder();
-			viewOrder.Show();
-			Close();
 		}
 	}
 }

@@ -65,7 +65,7 @@
 
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
-                    <Setter Property="Background" Value="BurlyWood"/>
+                    <Setter Property="Background" Value="{StaticResource TooLightGray}"/>
 
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -85,24 +85,20 @@
                     </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
-            
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№" 
                                     Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Услуга" 
-                                    Binding="{Binding Service}"
-                                    Width="90" />
+                                    Binding="{Binding Service}"/>
                 <DataGridTextColumn Header="Клиент" 
-                                    Binding="{Binding Customer}"
-                                    Width="90" />
+                                    Binding="{Binding Customer}"/>
                 <DataGridTextColumn Header="Ответственный" 
                                     Binding="{Binding Worker}" />
                 <DataGridTextColumn Header="Дата" 
-                                    Binding="{Binding Date}"
-                                    Width="90" />
+                                    Binding="{Binding Date}"/>
                 <DataGridTextColumn Header="Время" 
-                                    Binding="{Binding Time}"
-                                    Width="90" />
+                                    Binding="{Binding Time}"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -139,17 +135,14 @@
             <Button Margin="20, 0, 0, 0"
                     Style="{StaticResource AddButton}"
                     BorderThickness="0"
-                    ToolTip="Добавить новый заказ"/>
+                    ToolTip="Добавить новый заказ"
+                    Click="AddOrder"/>
         </StackPanel>
         <Button Content="Выйти"
-                Background="{DynamicResource DarkGray}"
+                Style="{StaticResource GrayButton}"
                 Grid.Row="3"
-                Height="24"
-                Width="70"
                 HorizontalAlignment="Right"
-                Margin="0,0,5,0"
-                BorderThickness="0"
                 ToolTip="Выход из учетной записи"
-                Foreground="White"/>
+                Click="Exit"/>
     </Grid>
 </Window>

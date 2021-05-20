@@ -40,7 +40,8 @@
                     Content="OK"
                     BorderThickness="0"
                     BorderBrush="#DF2626"
-                    Margin="0, 15, 0, 0" />
+                    Margin="0, 15, 0, 0" 
+                    Click="Enter"/>
 
         </StackPanel>
     </Grid>
