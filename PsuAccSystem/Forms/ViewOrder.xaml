@@ -106,7 +106,8 @@
                     Grid.Row="2"
                     Margin="10, 10, 0, 0">
             <Border Background="#A7B4B4"
-                    Padding="10">
+                    Padding="10"
+                    CornerRadius="10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>

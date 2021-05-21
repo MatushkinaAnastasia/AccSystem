@@ -2,17 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:PsuAccSystem.Styles">
 
-    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="BurlyWood"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="BurlyWood"/>
-    <SolidColorBrush x:Key="Button.Pressed.Background" Color="BurlyWood"/>
-    <SolidColorBrush x:Key="Button.Pressed.Border" Color="BurlyWood"/>
-    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
     <SolidColorBrush x:Key="DarkGray" Color="#778A8A"/>
     <SolidColorBrush x:Key="LightGray" Color="#91A1A1"/>
     <SolidColorBrush x:Key="TooLightGray" Color="#EEEEEE"/>
     <SolidColorBrush x:Key="Green" Color="#1DC03E"/>
+    <SolidColorBrush x:Key="Red" Color="#DF2626"/>
 
     <Style TargetType="Button">
         <Setter Property="Template">
@@ -55,6 +49,32 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Label">
+        <Setter Property="Padding" Value="10,0,10,0"/>
+        <Setter Property="Margin" Value="0,0,0,3"/>
+        <Setter Property="Background" Value="{StaticResource LightGray}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="10"
+                            BorderBrush="Transparent"
+                            BorderThickness="1">
+                        <ContentPresenter Focusable="False" 
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
     <Style TargetType="Window">
         <Setter Property="FontFamily" Value="Verdana"/>
     </Style>
@@ -74,7 +94,7 @@
     <Style x:Key="AuthButton" TargetType="Button"  BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Width" Value="84"/>
         <Setter Property="Height" Value="34"/>
-        <Setter Property="Background" Value="#DF2626"/>
+        <Setter Property="Background" Value="{StaticResource Red}"/>
         <Setter Property="Foreground" Value="White"/>
 
     </Style>
@@ -86,7 +106,8 @@
 
     <Style x:Key="AddButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Width" Value="190"/>
-        <Setter Property="Background" Value="#DF2626"/>
+        <Setter Property="Height" Value="70"/>
+        <Setter Property="Background" Value="{StaticResource Red}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="Content" Value="+"/>

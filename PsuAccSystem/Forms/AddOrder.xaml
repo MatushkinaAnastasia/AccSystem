@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PsuAccSystem.Forms"
         mc:Ignorable="d"
-        Title="AddOrder" Height="450" Width="800">
-    <Grid>
+        Title="Добавление нового заказа" Height="450" Width="800">
+    <Grid Style="{StaticResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ComboBox ItemsSource="{Binding Services}"
+                  SelectedItem="{Binding SelectedService}"
+                  DisplayMemberPath="Name"
+                  Height="50"
+                  Width="200"/>
+
+        <ContentControl Grid.Row="1"
+            Content="{Binding CurrentControl}"/>
+
+        <StackPanel Grid.Row="2"
+                    VerticalAlignment="Center">
+            <Button Style="{StaticResource AddButton}"
+                    Click="CalcCostClick"/>
+        </StackPanel>
         
     </Grid>
 </Window>

@@ -26,13 +26,27 @@
                     Grid.Row="1">
             <StackPanel VerticalAlignment="Center"
                                 Margin="5">
-                <TextBlock Text="Логин"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Логин"
+                           Width="68"/>
+                </Grid>
                 <TextBox Style="{StaticResource AuthTextBox}"/>
             </StackPanel>
 
             <StackPanel VerticalAlignment="Center"
                         Margin="5">
-                <TextBlock Text="Пароль"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Пароль"
+                           Width="68"/>
+                </Grid>
                 <TextBox Style="{StaticResource AuthTextBox}"/>
             </StackPanel>
 
