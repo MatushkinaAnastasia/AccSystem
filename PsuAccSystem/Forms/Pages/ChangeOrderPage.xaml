@@ -1,0 +1,96 @@
+﻿<Page x:Class="PsuAccSystem.Forms.Pages.ChangeOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PsuAccSystem.Forms.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Подробная информация о заказе">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0"
+              Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="Подробная информация о заказе"
+                   Height="20"
+                   Margin="0"
+                   VerticalAlignment="Bottom"/>
+            <Grid Grid.Row="1"
+                  VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel  Grid.Column="0">
+                    <Label Content=""/>
+                    <Label Content="Номер заказа"/>
+                    <Label Content="Услуга"/>
+                    <Label Content="Заказчик"/>
+                    <Label Content="Стоимость"/>
+                    <Label Content="Ответственный"/>
+                    <Label Content="Дата"/>
+                    <Label Content="Время"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <TextBox Text=""
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                    <TextBox Text="{Binding ThisOrder.Id}"
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                    <TextBox Text="{Binding ThisOrder.Service}"
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                    <TextBox Text="{Binding ThisOrder.Customer}"
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                    <TextBox Text="{Binding ThisOrder.Price}"
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                    <TextBox Text="{Binding ThisOrder.Worker}"
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                    <TextBox Text="{Binding ThisOrder.Date}"
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                    <TextBox Text="{Binding ThisOrder.Time}"
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center">
+
+            <Button Margin="20, 0, 0, 0"
+                    Style="{StaticResource AddButton}"
+                    Content="{Binding ContentButton}"
+                    Background="{Binding ColorButton}"
+                    BorderThickness="0"
+                    ToolTip="Перейти в режим изменения заказа"
+                    Command="{Binding ChangeOrderCommand}"/>
+            <Button Content="🗑"
+                    Margin="20, 0, 0, 0"
+                    Style="{StaticResource AddButton}"
+                    BorderThickness="0"
+                    ToolTip="Удалить заказ"
+                    Command="{Binding AddOrderCommand}"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -2,29 +2,19 @@
 using PsuAccSystem.Model;
 using PsuAccSystem.UserControls;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace PsuAccSystem.Forms
+namespace PsuAccSystem.Forms.Pages
 {
-	/// <summary>
-	/// Логика взаимодействия для AddOrder.xaml
-	/// </summary>
-	public partial class AddOrder : Window, INotifyPropertyChanged
+	public partial class AddOrderPage : Page, INotifyPropertyChanged
 	{
 		private IService selectedService;
-		public AddOrder()
+
+		public AddOrderPage()
 		{
 			InitializeComponent();
 			DataContext = this;
@@ -36,7 +26,6 @@ namespace PsuAccSystem.Forms
 				new InternetPayService(),
 			};
 			SelectedService = Services.First();
-
 		}
 
 		public ObservableCollection<IService> Services { get; set; }
@@ -69,10 +58,17 @@ namespace PsuAccSystem.Forms
 
 		private void CalcCostClick(object sender, RoutedEventArgs e)
 		{
+			double lastCost = 0;
 			if (SelectedService != null)
 			{
-				MessageBox.Show(SelectedService.GetCost().ToString());
+				lastCost = SelectedService.GetCost();
 			}
+			Order newOrder = new Order(11, SelectedService.Name, "nasya", "denis", lastCost.ToString(), "22.22.22", "13123123");
+			Data.Instance.Orders.Add(newOrder);
+			MessageBox.Show($"Итого:{lastCost} руб.\nЗапись добавлена!");
+
+			NavigationService.GoBack();
+
 		}
 	}
 }

@@ -24,7 +24,7 @@ namespace PsuAccSystem.Forms
 
 		private void Enter(object sender, RoutedEventArgs e)
 		{
-			var viewOrder = new ViewOrder();
+			var viewOrder = new MainForm();
 			viewOrder.Show();
 			Close();
 		}

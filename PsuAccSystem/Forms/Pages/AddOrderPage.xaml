@@ -1,14 +1,14 @@
-﻿<Window x:Class="PsuAccSystem.Forms.AddOrder"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PsuAccSystem.Forms"
-        mc:Ignorable="d"
-        Title="Добавление нового заказа" Height="450" Width="800">
+﻿<Page x:Class="PsuAccSystem.Forms.Pages.AddOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PsuAccSystem.Forms.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="Добавление нового заказа">
     <Grid Style="{StaticResource GridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -28,6 +28,5 @@
             <Button Style="{StaticResource AddButton}"
                     Click="CalcCostClick"/>
         </StackPanel>
-        
     </Grid>
-</Window>
+</Page>

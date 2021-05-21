@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:PsuAccSystem.Styles">
+                    xmlns:local="clr-namespace:PsuAccSystem.Styles"
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
 
     <SolidColorBrush x:Key="DarkGray" Color="#778A8A"/>
     <SolidColorBrush x:Key="LightGray" Color="#91A1A1"/>
@@ -34,6 +35,7 @@
     </Style>
 
     <Style TargetType="TextBox">
+        <Setter Property="Margin" Value="0,0,0,3"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
