@@ -1,18 +1,16 @@
 ﻿using PsuAccSystem.Interfaces;
-using System;
-using System.Collections.Generic;
+using PsuAccSystem.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
-namespace PsuAccSystem.Model
+namespace PsuAccSystem.Forms.Pages
 {
-	public class InternetPayService: IService, INotifyPropertyChanged
+	internal class InternetWiredConnectService : IService, INotifyPropertyChanged
 	{
-		public InternetPayService()
+		public InternetWiredConnectService()
 		{
-			Name = "Оплата интернета";
+			Name = "Подключение проводного интернета";
 			Tarif = Tarif.Tarifs.First();
 		}
 

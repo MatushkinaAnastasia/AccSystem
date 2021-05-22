@@ -49,6 +49,7 @@
                     <Label Content="Ответственный"/>
                     <Label Content="Дата"/>
                     <Label Content="Время"/>
+                    <Label Content="Статус"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
@@ -67,6 +68,8 @@
                     <TextBox Text="{Binding ThisOrder.Date}"
                              IsReadOnly="{Binding IsReadOnly}"/>
                     <TextBox Text="{Binding ThisOrder.Time}"
+                             IsReadOnly="{Binding IsReadOnly}"/>
+                    <TextBox Text="{Binding ThisOrder.Status}"
                              IsReadOnly="{Binding IsReadOnly}"/>
                 </StackPanel>
             </Grid>

@@ -10,6 +10,7 @@
     <SolidColorBrush x:Key="Red" Color="#DF2626"/>
 
     <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="Verdana"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -36,6 +37,9 @@
 
     <Style TargetType="TextBox">
         <Setter Property="Margin" Value="0,0,0,3"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -52,7 +56,9 @@
     </Style>
 
     <Style TargetType="Label">
-        <Setter Property="Padding" Value="10,0,10,0"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="Padding" Value="20,0,20,0"/>
         <Setter Property="Margin" Value="0,0,0,3"/>
         <Setter Property="Background" Value="{StaticResource LightGray}"/>
         <Setter Property="Foreground" Value="White"/>
@@ -76,11 +82,11 @@
         </Setter>
     </Style>
 
-
-    <Style TargetType="Window">
+    <!--<Style TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontFamily" Value="Verdana"/>
-    </Style>
-    
+    </Style>-->
+
     <!--<Style TargetType="Border">
         <Setter Property="CornerRadius" Value="10"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -111,7 +117,7 @@
         <Setter Property="Height" Value="70"/>
         <Setter Property="Background" Value="{StaticResource Red}"/>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontSize" Value="25"/>
         <Setter Property="Content" Value="+"/>
     </Style>
 
@@ -139,6 +145,8 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
     </Style>
 
 </ResourceDictionary>

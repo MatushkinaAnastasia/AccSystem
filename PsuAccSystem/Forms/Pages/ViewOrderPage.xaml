@@ -62,8 +62,6 @@
                                     Binding="{Binding Worker}" />
                 <DataGridTextColumn Header="Дата" 
                                     Binding="{Binding Date}"/>
-                <DataGridTextColumn Header="Время" 
-                                    Binding="{Binding Time}"/>
             </DataGrid.Columns>
 
             <DataGrid.InputBindings>

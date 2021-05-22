@@ -6,7 +6,7 @@ namespace PsuAccSystem.Model
 {
 	public class Order
 	{
-		public Order(long id, string service, string customer, string worker, string price, string date, string time)
+		public Order(long id, string service, string customer, string worker, string price, string date, string time, string status)
 		{
 			Id = id;
 			Service = service;
@@ -15,6 +15,7 @@ namespace PsuAccSystem.Model
 			Worker = worker;
 			Date = date;
 			Time = time;
+			Status = status;
 		}
 
 		public long Id { get; set; }
@@ -24,5 +25,6 @@ namespace PsuAccSystem.Model
 		public string Price { get; set; }
 		public string Date { get; set; }
 		public string Time { get; set; }
+		public string Status { get; set; }
 	}
 }

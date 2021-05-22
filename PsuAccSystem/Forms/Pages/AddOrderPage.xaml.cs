@@ -24,6 +24,12 @@ namespace PsuAccSystem.Forms.Pages
 			{
 				new PrintService(),
 				new InternetPayService(),
+				new PhotocopyService(), 
+				new InternetWiredConnectService(),
+				new WiFiConnectService(),
+				new PermitMakeService(),
+				new PsuEmailProvideService(),
+				new PCuseService(),
 			};
 			SelectedService = Services.First();
 		}
@@ -49,6 +55,10 @@ namespace PsuAccSystem.Forms.Pages
 				{
 					CurrentControl = new InternetPayServiceControl(internetService);
 				}
+				else if (selectedService is PhotocopyService photocopySrvice)
+				{
+					CurrentControl = new PhotocopyServiceControl(photocopySrvice);
+				}
 				else
 				{
 					throw new NotImplementedException();
@@ -63,7 +73,7 @@ namespace PsuAccSystem.Forms.Pages
 			{
 				lastCost = SelectedService.GetCost();
 			}
-			Order newOrder = new Order(11, SelectedService.Name, "nasya", "denis", lastCost.ToString(), "22.22.22", "13123123");
+			Order newOrder = new Order(11, SelectedService.Name, "nasya", "denis", lastCost.ToString(), "22.22.22", "13123123", "Выполнен");
 			Data.Instance.Orders.Add(newOrder);
 			MessageBox.Show($"Итого:{lastCost} руб.\nЗапись добавлена!");
 

@@ -12,16 +12,24 @@ namespace PsuAccSystem.Model
 		{
 			Name = "Печать А4";
 			PageCost = 3; // 3 рубля лист
+			PageCount = 1;
+			FinallyCost = GetCost();
 		}
 
 		public string Name { get; set; }
 
 		public int PageCount { get; set; }
 		public int PageCost { get; set; }
+		public double FinallyCost { get => GetCost();
+			set
+			{
+				GetCost();
+			}
+		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		public int GetCost()
+		public double GetCost()
 		{
 			return PageCost * PageCount;
 		}

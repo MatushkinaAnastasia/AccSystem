@@ -1,4 +1,4 @@
-﻿using PsuAccSystem.Model;
+﻿using PsuAccSystem.Forms.Pages;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 namespace PsuAccSystem.UserControls
 {
 	/// <summary>
-	/// Логика взаимодействия для PrintServiceControl.xaml
+	/// Логика взаимодействия для PhotocopyServiceControl.xaml
 	/// </summary>
-	public partial class PrintServiceControl : UserControl
+	public partial class PhotocopyServiceControl : UserControl
 	{
-		public PrintServiceControl(PrintService printService)
+		public PhotocopyServiceControl(PhotocopyService photocopyService)
 		{
 			InitializeComponent();
-			DataContext = printService;
+			DataContext = photocopyService;
 		}
 	}
 }

@@ -7,6 +7,6 @@ namespace PsuAccSystem.Interfaces
 	public interface IService
 	{
 		public string Name { get; set; }
-		public int GetCost();
+		public double GetCost();
 	}
 }

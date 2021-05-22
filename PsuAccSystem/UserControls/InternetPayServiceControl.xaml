@@ -9,13 +9,13 @@
     <Grid>
         <StackPanel>
             <GroupBox Header="Тариф" Height="50"
-                      Width="150">
+                      Width="300">
                 <ComboBox ItemsSource="{Binding Tarifs}"
                           SelectedItem="{Binding Tarif}"
                           DisplayMemberPath="Name"/>
             </GroupBox>
             <GroupBox Header="Цена" Height="50"
-                      Width="150">
+                      Width="300">
                 <TextBlock Text="{Binding Tarif.Cost}"/>
             </GroupBox>
         </StackPanel>

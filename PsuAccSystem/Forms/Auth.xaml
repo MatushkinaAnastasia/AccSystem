@@ -32,7 +32,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Логин"
-                           Width="68"/>
+                           Width="auto"/>
                 </Grid>
                 <TextBox Style="{StaticResource AuthTextBox}"/>
             </StackPanel>
@@ -45,7 +45,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Пароль"
-                           Width="68"/>
+                           Width="auto"/>
                 </Grid>
                 <TextBox Style="{StaticResource AuthTextBox}"/>
             </StackPanel>
