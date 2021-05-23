@@ -59,7 +59,7 @@
                 <DataGridTextColumn Header="Клиент" 
                                     Binding="{Binding Customer.FIO}"/>
                 <DataGridTextColumn Header="Ответственный" 
-                                    Binding="{Binding Worker}" />
+                                    Binding="{Binding Worker.FIO}" />
                 <DataGridTextColumn Header="Дата" 
                                     Binding="{Binding Date}"/>
             </DataGrid.Columns>

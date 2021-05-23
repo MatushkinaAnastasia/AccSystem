@@ -1,5 +1,6 @@
 ﻿using PsuAccSystem.Forms.Pages;
 using PsuAccSystem.Interfaces;
+using PsuAccSystem.Model;
 using PsuAccSystem.Tools;
 using System.ComponentModel;
 using System.Windows;
@@ -37,6 +38,7 @@ namespace PsuAccSystem.Forms
 
 		private void Exit()
 		{
+			Data.Instance.CurrentWorker = null;
 			var auth = new Auth();
 			auth.Show();
 			Close();

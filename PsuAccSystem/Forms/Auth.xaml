@@ -34,7 +34,8 @@
                     <Label Content="Логин"
                            Width="auto"/>
                 </Grid>
-                <TextBox Style="{StaticResource AuthTextBox}"/>
+                <TextBox Style="{StaticResource AuthTextBox}"
+                         Text="{Binding Login}"/>
             </StackPanel>
 
             <StackPanel VerticalAlignment="Center"
@@ -47,7 +48,8 @@
                     <Label Content="Пароль"
                            Width="auto"/>
                 </Grid>
-                <TextBox Style="{StaticResource AuthTextBox}"/>
+                <TextBox Style="{StaticResource AuthTextBox}"
+                         Text="{Binding Password}"/>
             </StackPanel>
 
             <Button Style="{StaticResource AuthButton}"
