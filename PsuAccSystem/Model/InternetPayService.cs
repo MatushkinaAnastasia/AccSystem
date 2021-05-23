@@ -14,9 +14,12 @@ namespace PsuAccSystem.Model
 		{
 			Name = "Оплата интернета";
 			Tarif = Tarif.Tarifs.First();
+			Client = Clients.First();
 		}
 
 		public string Name { get; set; }
+		public ObservableCollection<Client> Clients => Data.Instance.Clients;
+		public Client Client { get; set; }
 
 		public Tarif Tarif { get; set; }
 

@@ -20,6 +20,8 @@ namespace PsuAccSystem.Forms.Pages
 
 		public ObservableCollection<Tarif> Tarifs => Tarif.Tarifs;
 
+		public Client Client { get; set; }
+
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public double GetCost()

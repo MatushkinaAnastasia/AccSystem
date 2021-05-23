@@ -13,6 +13,7 @@ namespace PsuAccSystem.Model
 			Name = "Печать А4";
 			PageCost = 3; // 3 рубля лист
 			PageCount = 1;
+			Client = new Client(0, "*", "*", "*", "*", "*");
 		}
 
 		public string Name { get; set; }
@@ -20,6 +21,7 @@ namespace PsuAccSystem.Model
 		public int PageCount { get; set; }
 		public int PageCost { get; set; }
 		public double FinallyCost { get => GetCost(); set => GetCost(); }
+		public Client Client { get; set; }
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

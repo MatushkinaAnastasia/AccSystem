@@ -55,9 +55,9 @@ namespace PsuAccSystem.Forms.Pages
 				{
 					CurrentControl = new InternetPayServiceControl(internetService);
 				}
-				else if (selectedService is PhotocopyService photocopySrvice)
+				else if (selectedService is PhotocopyService photocopyService)
 				{
-					CurrentControl = new PhotocopyServiceControl(photocopySrvice);
+					CurrentControl = new PhotocopyServiceControl(photocopyService);
 				}
 				else
 				{
@@ -74,7 +74,7 @@ namespace PsuAccSystem.Forms.Pages
 				lastCost = SelectedService.GetCost();
 			}
 			Client nasya = new Client(1, "nasya", "matush", "aleks", "nasya@mail", "8919281928");
-			Order newOrder = new Order(11, SelectedService.Name, nasya, "denis", lastCost.ToString(), "22.22.22", "13123123", "Выполнен");
+			Order newOrder = new Order(11, SelectedService.Name, SelectedService.Client, "denis", lastCost.ToString(), "22.22.22", "13123123", "Выполнен");
 			Data.Instance.Orders.Add(newOrder);
 			MessageBox.Show($"Итого:{lastCost} руб.\nЗапись добавлена!");
 

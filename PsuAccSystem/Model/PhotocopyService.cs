@@ -1,4 +1,5 @@
 ﻿using PsuAccSystem.Interfaces;
+using PsuAccSystem.Model;
 using System.ComponentModel;
 
 namespace PsuAccSystem.Forms.Pages
@@ -9,6 +10,7 @@ namespace PsuAccSystem.Forms.Pages
 		{
 			Name = "Ксерокопия";
 			PageCost = 2; // 2 рубля лист
+			Client = new Client(0, "*","*","*","*","*");
 		}
 
 		public string Name { get; set; }
@@ -16,6 +18,7 @@ namespace PsuAccSystem.Forms.Pages
 		public int PageCount { get; set; }
 		public int PageCost { get; set; }
 		public double FinallyCost { get => GetCost(); set => GetCost(); }
+		public Client Client { get; set; }
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
