@@ -23,54 +23,76 @@
         <Grid Grid.Row="0"
               Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0"
                    Content="Подробная информация о заказе"
                    Height="20"
-                   Margin="0"
-                   VerticalAlignment="Bottom"/>
-            <Grid Grid.Row="1"
-                  VerticalAlignment="Center">
+                   VerticalAlignment="Bottom"
+                   Background="{StaticResource DarkGray}"
+                   Margin="0,0,0,10"/>
+            <Grid Background="{StaticResource DarkGray}"
+                  Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <StackPanel  Grid.Column="0">
-                    <Label Content=""/>
-                    <Label Content="Номер заказа"/>
-                    <Label Content="Услуга"/>
-                    <Label Content="Заказчик"/>
-                    <Label Content="Стоимость"/>
-                    <Label Content="Ответственный"/>
-                    <Label Content="Дата"/>
-                    <Label Content="Время"/>
-                    <Label Content="Статус"/>
+                    <Label Content="Номер заказа"
+                           Style="{StaticResource LabelOrder}"/>
+                    <Label Content="Услуга"
+                           Style="{StaticResource LabelOrder}"/>
+                    <Label Content="Заказчик"
+                           Style="{StaticResource LabelOrder}"/>
+                    <Label Content="Стоимость"
+                           Style="{StaticResource LabelOrder}"/>
+                    <Label Content="Ответственный"
+                           Style="{StaticResource LabelOrder}"/>
+                    <Label Content="Дата"
+                           Style="{StaticResource LabelOrder}"/>
+                    <Label Content="Время"
+                           Style="{StaticResource LabelOrder}"/>
+                    <Label Content="Статус"
+                           Style="{StaticResource LabelOrder}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
-                    <TextBox Text=""
-                             IsReadOnly="{Binding IsReadOnly}"/>
                     <TextBox Text="{Binding ThisOrder.Id}"
-                             IsReadOnly="{Binding IsReadOnly}"/>
+                             IsReadOnly="{Binding IsReadOnly}"
+                             Style="{StaticResource TextBoxOrder}"
+                             Background="{Binding BackgroundTB}"/>
                     <TextBox Text="{Binding ThisOrder.Service}"
-                             IsReadOnly="{Binding IsReadOnly}"/>
-                    <TextBox Text="{Binding ThisOrder.Customer}"
-                             IsReadOnly="{Binding IsReadOnly}"/>
+                             IsReadOnly="{Binding IsReadOnly}"
+                             Style="{StaticResource TextBoxOrder}"
+                             Background="{Binding BackgroundTB}"/>
+                    <TextBox Text="{Binding ThisOrder.Customer.FIO, Mode=OneWay}"
+                             IsReadOnly="{Binding IsReadOnly}"
+                             Style="{StaticResource TextBoxOrder}"
+                             Background="{Binding BackgroundTB}"/>
                     <TextBox Text="{Binding ThisOrder.Price}"
-                             IsReadOnly="{Binding IsReadOnly}"/>
+                             IsReadOnly="{Binding IsReadOnly}"
+                             Style="{StaticResource TextBoxOrder}"
+                             Background="{Binding BackgroundTB}"/>
                     <TextBox Text="{Binding ThisOrder.Worker}"
-                             IsReadOnly="{Binding IsReadOnly}"/>
+                             IsReadOnly="{Binding IsReadOnly}"
+                             Style="{StaticResource TextBoxOrder}"
+                             Background="{Binding BackgroundTB}"/>
                     <TextBox Text="{Binding ThisOrder.Date}"
-                             IsReadOnly="{Binding IsReadOnly}"/>
+                             IsReadOnly="{Binding IsReadOnly}"
+                             Style="{StaticResource TextBoxOrder}"
+                             Background="{Binding BackgroundTB}"/>
                     <TextBox Text="{Binding ThisOrder.Time}"
-                             IsReadOnly="{Binding IsReadOnly}"/>
+                             IsReadOnly="{Binding IsReadOnly}"
+                             Style="{StaticResource TextBoxOrder}"
+                             Background="{Binding BackgroundTB}"/>
                     <TextBox Text="{Binding ThisOrder.Status}"
-                             IsReadOnly="{Binding IsReadOnly}"/>
+                             IsReadOnly="{Binding IsReadOnly}"
+                             Style="{StaticResource TextBoxOrder}"
+                             Background="{Binding BackgroundTB}"/>
                 </StackPanel>
             </Grid>
         </Grid>
@@ -81,7 +103,7 @@
                     Grid.Column="1"
                     HorizontalAlignment="Center">
 
-            <Button Margin="20, 0, 0, 0"
+            <Button Margin="0, 0, 0, 0"
                     Style="{StaticResource AddButton}"
                     Content="{Binding ContentButton}"
                     Background="{Binding ColorButton}"
@@ -89,11 +111,11 @@
                     ToolTip="Перейти в режим изменения заказа"
                     Command="{Binding ChangeOrderCommand}"/>
             <Button Content="🗑"
-                    Margin="20, 0, 0, 0"
+                    Margin="40, 0, 0, 0"
                     Style="{StaticResource AddButton}"
                     BorderThickness="0"
                     ToolTip="Удалить заказ"
-                    Command="{Binding AddOrderCommand}"/>
+                    Command="{Binding DeleteOrderCommand}"/>
         </StackPanel>
     </Grid>
 </Page>

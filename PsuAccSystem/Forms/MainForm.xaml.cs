@@ -19,13 +19,21 @@ namespace PsuAccSystem.Forms
 			
 			MainPage = new ViewOrderPage(this);
 			ExitCommand = new RelayCommand(Exit);
+			OpenClientsTableCommand = new RelayCommand(OpenClientsTable);
 			DataContext = this;
 		}
 
+
 		public Page MainPage { get; set; }
 		public ICommand ExitCommand { get; private set; }
+		public ICommand OpenClientsTableCommand { get; private set; }
 
 		public event PropertyChangedEventHandler PropertyChanged;
+
+		private void OpenClientsTable()
+		{
+			MainPage = new ClientsTablePage();
+		}
 
 		private void Exit()
 		{

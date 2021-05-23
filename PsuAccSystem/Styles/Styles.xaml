@@ -8,6 +8,8 @@
     <SolidColorBrush x:Key="TooLightGray" Color="#EEEEEE"/>
     <SolidColorBrush x:Key="Green" Color="#1DC03E"/>
     <SolidColorBrush x:Key="Red" Color="#DF2626"/>
+    <SolidColorBrush x:Key="GrayWhite" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="Orange" Color="#E27F1B"/>
 
     <Style TargetType="Button">
         <Setter Property="FontFamily" Value="Verdana"/>
@@ -82,15 +84,7 @@
         </Setter>
     </Style>
 
-    <!--<Style TargetType="TextBlock">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="Verdana"/>
-    </Style>-->
 
-    <!--<Style TargetType="Border">
-        <Setter Property="CornerRadius" Value="10"/>
-        <Setter Property="BorderThickness" Value="0"/>
-    </Style>-->
 
     <Style x:Key="AuthTextBox" TargetType="TextBox"  BasedOn="{StaticResource {x:Type TextBox}}">
         <Setter Property="Height" Value="24"/>
@@ -146,6 +140,30 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+    </Style>
+
+    <Style x:Key="LabelOrder" TargetType="Label">
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="3,0,0,0"/>
+        <Setter Property="Background" Value="{StaticResource DarkGray}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+    </Style>
+    
+    <Style x:Key="TextBoxOrder" TargetType="TextBox">
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="3,0,0,0"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="{StaticResource GrayWhite}"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="0.8"/>
         <Setter Property="FontFamily" Value="Verdana"/>
     </Style>
 

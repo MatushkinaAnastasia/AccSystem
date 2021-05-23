@@ -7,22 +7,41 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Height="50"
-          Width="250">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Label Content="Количество страниц"/>
-            <StackPanel Orientation="Horizontal"
+          HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Количество страниц"/>
+                <StackPanel Orientation="Horizontal"
                         Grid.Row="1">
-                <TextBox Text="{Binding PageCount}"
+                    <TextBox Text="{Binding PageCount, UpdateSourceTrigger=PropertyChanged}"
                      Width="150"
                      Height="20"/>
-                <TextBlock Text="шт."
+                    <TextBlock Text="шт."
                        Margin="5,0,0,0"
-                           VerticalAlignment="Center"/>
-            </StackPanel>
-        </Grid>
+                       VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+            <Grid Margin="20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Общая стоимость"/>
+                <StackPanel Orientation="Horizontal"
+                        Grid.Row="1">
+                    <TextBox Text="{Binding FinallyCost}"
+                             IsReadOnly="True"
+                             Width="150"
+                             Height="20"/>
+                    <TextBlock Text="руб."
+                             Margin="5,0,0,0"
+                             VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

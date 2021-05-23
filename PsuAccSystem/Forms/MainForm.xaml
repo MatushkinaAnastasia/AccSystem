@@ -25,12 +25,21 @@
             
             <Menu Grid.Column="0"
                   VerticalAlignment="Center">
+                <MenuItem Header="Клиенты">
+                    <MenuItem Header="Таблица клиентов" 
+                              Command="{Binding OpenClientsTableCommand}"/>
+                </MenuItem>
+                <MenuItem Header="Заказы">
+                    <MenuItem Header="Таблица заказов" />
+                </MenuItem>
                 <MenuItem Header="Контроль">
                     <MenuItem Header="Оплата за Интернет" />
                     <MenuItem Header="Управление рассылкой на почту"/>
                 </MenuItem>
-                <MenuItem Header="Анализ" ></MenuItem>
-                <MenuItem Header="Отчет" ></MenuItem>
+                <MenuItem Header="Анализ" >
+                    <MenuItem Header="Статистика"/>
+                </MenuItem>
+                <!--<MenuItem Header="Отчет" ></MenuItem>-->
                 <MenuItem Header="Помощь" ></MenuItem>
                 <MenuItem Header="⟳" FontSize="16" ToolTip="Обновить таблицу"></MenuItem>
             </Menu>

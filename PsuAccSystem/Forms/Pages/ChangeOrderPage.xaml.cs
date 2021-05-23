@@ -16,24 +16,33 @@ namespace PsuAccSystem.Forms.Pages
 		public bool IsReadOnly { get; set; }
 		public Brush ColorButton { get; set; }
 		public string ContentButton { get; set; }
+		public Brush BackgroundTB { get; set; }
 		public ChangeOrderPage(Order order)
 		{
 			InitializeComponent();
 
 			ChangeOrderCommand = new RelayCommand(ChangeOrder);
+			DeleteOrderCommand = new RelayCommand(DeleteOrder);
 
 			ThisOrder = order;
 			IsReadOnly = true;
 			ColorButton = new SolidColorBrush(Color.FromArgb(255, 226, 127, 27));
 			ContentButton = "🖊";
+			BackgroundTB = new SolidColorBrush(Color.FromArgb(255, 238, 238, 238));
 
 			DataContext = this;
 		}
 
 		public ICommand ChangeOrderCommand { get; private set; }
+		public ICommand DeleteOrderCommand { get; private set; }
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
+		private void DeleteOrder()
+		{
+			Data.Instance.Orders.Remove(ThisOrder);
+			NavigationService.GoBack();
+		}
 		private void ChangeOrder()
 		{
 			if (IsReadOnly == true)
@@ -41,12 +50,14 @@ namespace PsuAccSystem.Forms.Pages
 				IsReadOnly = false;
 				ColorButton = new SolidColorBrush(Color.FromArgb(255, 29, 192, 62));
 				ContentButton = "✔️";
+				BackgroundTB = new SolidColorBrush(Color.FromArgb(255, 209, 217, 222));
 			} 
 			else
 			{
 				IsReadOnly = true;
 				ColorButton = new SolidColorBrush(Color.FromArgb(255, 226, 127, 27));
 				ContentButton = "🖊";
+				BackgroundTB = new SolidColorBrush(Color.FromArgb(255, 238, 238, 238));
 			}
 		}
 	}

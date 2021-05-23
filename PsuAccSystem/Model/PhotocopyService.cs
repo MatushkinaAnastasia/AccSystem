@@ -15,6 +15,7 @@ namespace PsuAccSystem.Forms.Pages
 
 		public int PageCount { get; set; }
 		public int PageCost { get; set; }
+		public double FinallyCost { get => GetCost(); set => GetCost(); }
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

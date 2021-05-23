@@ -17,12 +17,12 @@
                 <Label Content="Количество страниц"/>
                 <StackPanel Orientation="Horizontal"
                         Grid.Row="1">
-                    <TextBox Text="{Binding PageCount}"
+                    <TextBox Text="{Binding PageCount, UpdateSourceTrigger=PropertyChanged}"
                      Width="150"
                      Height="20"/>
                     <TextBlock Text="шт."
                        Margin="5,0,0,0"
-                           VerticalAlignment="Center"/>
+                       VerticalAlignment="Center"/>
                 </StackPanel>
             </Grid>
             <Grid Margin="20,0,0,0">

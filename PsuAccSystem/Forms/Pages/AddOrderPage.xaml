@@ -13,12 +13,18 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <ComboBox ItemsSource="{Binding Services}"
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Center">
+            <Label Content="Тип услуги"
+                   Width="150"/>
+            <ComboBox ItemsSource="{Binding Services}"
                   SelectedItem="{Binding SelectedService}"
                   DisplayMemberPath="Name"
-                  Height="50"
-                  Width="200"/>
+                  Height="30"
+                  Width="200"
+                  BorderThickness="1"/>
+        </StackPanel>
+
 
         <ContentControl Grid.Row="1"
             Content="{Binding CurrentControl}"/>
