@@ -58,7 +58,7 @@
                                     Binding="{Binding FIO}"/>
                 <DataGridTextColumn Header="Почта" 
                                     Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Телфон" 
+                <DataGridTextColumn Header="Телефон" 
                                     Binding="{Binding PhoneNumber}" />
             </DataGrid.Columns>
 
@@ -77,13 +77,13 @@
                     Style="{StaticResource AddButton}"
                     BorderThickness="0"
                     ToolTip="Добавить нового клиента"
-                    Command="{Binding AddOrderCommand}"/>
+                    Click="AddClient"/>
             <Button Content="🗑"
                     Margin="20, 0, 0, 0"
                     Style="{StaticResource AddButton}"
                     BorderThickness="0"
                     ToolTip="Удалить данные о клиенте"
-                    Command="{Binding AddOrderCommand}"
+                    Click="DeleteOrder"
                     Background="{StaticResource Orange}"/>
         </StackPanel>
     </Grid>

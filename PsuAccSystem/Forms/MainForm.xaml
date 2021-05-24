@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Система учета заказов Интернет-Центра ПГНИУ" 
         Height="503" 
-        Width="727">
+        Width="900">
     <Grid Style="{StaticResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>

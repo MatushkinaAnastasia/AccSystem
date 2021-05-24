@@ -30,9 +30,9 @@ namespace PsuAccSystem.Model
 
 			Orders = new ObservableCollection<Order>
 			{
-				new Order(1, "", Clients[0], Workers[0], "150","15/15/15", "15:34", "Поступил"),
-				new Order(4, "", Clients[1], Workers[0], "150","15//15", "15", "Ожидает оплаты"),
-				new Order(5, "", Clients[2], Workers[1], "150","15/15/15", "15:34", "В обработке"),
+				new Order(1, InternetPayService.ServiceName, Clients[0], Workers[0], "150", DateTime.Now, DateTime.Now, "Поступил"),
+				new Order(4, "", Clients[1], Workers[0], "150", DateTime.Now, DateTime.Now, "Ожидает оплаты"),
+				new Order(5, "", Clients[2], Workers[1], "150", DateTime.Now, DateTime.Now, "В обработке"),
 			};
 		}
 

@@ -54,14 +54,16 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№" 
                                     Binding="{Binding Id}" />
-                <DataGridTextColumn Header="Услуга" 
-                                    Binding="{Binding Service}"/>
                 <DataGridTextColumn Header="Клиент" 
                                     Binding="{Binding Customer.FIO}"/>
+                <DataGridTextColumn Header="Услуга" 
+                                    Binding="{Binding Service}"/>
                 <DataGridTextColumn Header="Ответственный" 
                                     Binding="{Binding Worker.FIO}" />
                 <DataGridTextColumn Header="Дата" 
-                                    Binding="{Binding Date}"/>
+                                    Binding="{Binding Date, StringFormat={}{0:d}}"/>
+                <DataGridTextColumn Header="Время" 
+                                    Binding="{Binding Date, StringFormat={}{0:t}}"/>
             </DataGrid.Columns>
 
             <DataGrid.InputBindings>

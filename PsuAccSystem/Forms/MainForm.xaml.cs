@@ -33,7 +33,7 @@ namespace PsuAccSystem.Forms
 
 		private void OpenClientsTable()
 		{
-			MainPage = new ClientsTablePage();
+			MainPage = new ClientsTablePage(this);
 		}
 
 		private void Exit()

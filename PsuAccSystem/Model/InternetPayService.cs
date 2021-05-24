@@ -10,9 +10,11 @@ namespace PsuAccSystem.Model
 {
 	public class InternetPayService: IService, INotifyPropertyChanged
 	{
+		public static readonly string ServiceName = "Оплата интернета";
+
 		public InternetPayService()
 		{
-			Name = "Оплата интернета";
+			Name = ServiceName;
 			Tarif = Tarif.Tarifs.First();
 			Client = Clients.First();
 		}

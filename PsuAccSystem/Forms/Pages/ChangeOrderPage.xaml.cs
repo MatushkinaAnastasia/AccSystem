@@ -1,6 +1,7 @@
 ﻿using PsuAccSystem.Model;
 using PsuAccSystem.Tools;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -40,8 +41,13 @@ namespace PsuAccSystem.Forms.Pages
 
 		private void DeleteOrder()
 		{
-			Data.Instance.Orders.Remove(ThisOrder);
-			NavigationService.GoBack();
+			var result = MessageBox.Show("Вы уверены, что хотите удалить заказ?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
+			if (result == MessageBoxResult.Yes)
+			{
+				Data.Instance.Orders.Remove(ThisOrder);
+				MessageBox.Show("Заказ удален успешно!");
+				NavigationService.GoBack();
+			}
 		}
 		private void ChangeOrder()
 		{
@@ -51,7 +57,7 @@ namespace PsuAccSystem.Forms.Pages
 				ColorButton = new SolidColorBrush(Color.FromArgb(255, 29, 192, 62));
 				ContentButton = "✔️";
 				BackgroundTB = new SolidColorBrush(Color.FromArgb(255, 209, 217, 222));
-			} 
+			}
 			else
 			{
 				IsReadOnly = true;
