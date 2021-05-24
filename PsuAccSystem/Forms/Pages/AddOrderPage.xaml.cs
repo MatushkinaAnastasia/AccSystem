@@ -59,6 +59,10 @@ namespace PsuAccSystem.Forms.Pages
 				{
 					CurrentControl = new PhotocopyServiceControl(photocopyService);
 				}
+				else if (selectedService is PCuseService pCuse)
+				{
+					CurrentControl = new PCuseServiceControl(pCuse);
+				}
 				else
 				{
 					throw new NotImplementedException();

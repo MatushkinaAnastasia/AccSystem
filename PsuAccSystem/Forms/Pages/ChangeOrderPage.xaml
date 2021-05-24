@@ -77,7 +77,7 @@
                              IsReadOnly="{Binding IsReadOnly}"
                              Style="{StaticResource TextBoxOrder}"
                              Background="{Binding BackgroundTB}"/>
-                    <TextBox Text="{Binding ThisOrder.Customer.FIO, Mode=OneWay}"
+                    <TextBox Text="{Binding CurrentWorker, Mode=OneWay}"
                              Style="{StaticResource TextBoxOrder}"
                              Background="{Binding BackgroundTB}"
                              IsReadOnly="True"/>

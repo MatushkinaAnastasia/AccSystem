@@ -2,6 +2,7 @@
 using PsuAccSystem.Interfaces;
 using PsuAccSystem.Model;
 using PsuAccSystem.Tools;
+using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,13 +22,19 @@ namespace PsuAccSystem.Forms
 			MainPage = new ViewOrderPage(this);
 			ExitCommand = new RelayCommand(Exit);
 			OpenClientsTableCommand = new RelayCommand(OpenClientsTable);
+			OpenOrdersTableCommand = new RelayCommand(OpenOrdersTable);
 			DataContext = this;
 		}
 
+		private void OpenOrdersTable()
+		{
+			MainPage = new ViewOrderPage(this);
+		}
 
 		public Page MainPage { get; set; }
 		public ICommand ExitCommand { get; private set; }
 		public ICommand OpenClientsTableCommand { get; private set; }
+		public ICommand OpenOrdersTableCommand { get; private set; }
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

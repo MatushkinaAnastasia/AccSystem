@@ -30,7 +30,8 @@
                               Command="{Binding OpenClientsTableCommand}"/>
                 </MenuItem>
                 <MenuItem Header="Заказы">
-                    <MenuItem Header="Таблица заказов" />
+                    <MenuItem Header="Таблица заказов"
+                              Command="{Binding OpenOrdersTableCommand}"/>
                 </MenuItem>
                 <MenuItem Header="Контроль">
                     <MenuItem Header="Оплата за Интернет" />

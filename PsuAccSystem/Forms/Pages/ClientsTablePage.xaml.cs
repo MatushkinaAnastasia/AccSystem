@@ -41,11 +41,18 @@ namespace PsuAccSystem.Forms.Pages
 
 		private void DeleteOrder(object sender, RoutedEventArgs e)
 		{
-			var result = MessageBox.Show("Вы уверены, что хотите удалить все данные об этом клиенте?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
-			if (result == MessageBoxResult.Yes)
+			if (SelectedClient == null)
 			{
-				Data.Instance.Clients.Remove(SelectedClient);
-				MessageBox.Show("Данные о клиенте удалены успешно!");
+				MessageBox.Show("Выберите клиента!");
+			}
+			else
+			{
+				var result = MessageBox.Show("Вы уверены, что хотите удалить все данные об этом клиенте?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
+				if (result == MessageBoxResult.Yes)
+				{
+					Data.Instance.Clients.Remove(SelectedClient);
+					MessageBox.Show("Данные о клиенте удалены успешно!");
+				}
 			}
 		}
 	}

@@ -18,6 +18,7 @@ namespace PsuAccSystem.Forms.Pages
 		public Brush ColorButton { get; set; }
 		public string ContentButton { get; set; }
 		public Brush BackgroundTB { get; set; }
+		public string CurrentWorker => Data.Instance.CurrentWorker.FIO;
 		public ChangeOrderPage(Order order)
 		{
 			InitializeComponent();
