@@ -19,7 +19,10 @@ namespace PsuAccSystem.Model
 			{
 				new Client(2, "Дмитрий", "Дмитриев","Дмитриевич", "den@", "85678995578"),
 				new Client(3, "Кот", "Котов","Котович", "aasden@", "8438995578"),
-				new Client(4, "Архыз", "Архызов","Архызович", "aaaaden@", "85678995578"),
+				new Client(4, "Денис", "Лазу","Денисович", "aaaaden@", "85678995578"),
+				new Client(5, "Деонис", "Лазуклв","Архызович", "aaaaden@", "85678995578"),
+				new Client(6, "Денененис", "Лазон","Архызович", "aaaaden@", "85678995578"),
+				new Client(7, "Архыз", "Архызов","Архызович", "aaaaden@", "85678995578"),
 			};
 
 			Workers = new ObservableCollection<Worker>

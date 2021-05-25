@@ -29,6 +29,9 @@ namespace PsuAccSystem.Model
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
+		public string ClientName { get; set; }
+		public ObservableCollection<string> TestItems { get; private set; }
+
 		public double GetCost()
 		{
 			return Tarif.Cost;
