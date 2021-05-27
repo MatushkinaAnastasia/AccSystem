@@ -8,6 +8,7 @@ namespace PsuAccSystem.Forms.Pages
 {
 	public class PCuseService : IService, INotifyPropertyChanged
 	{
+		public static readonly string ServiceName = "Использование компьютера";
 		public PCuseService()
 		{
 			Name = "Использование компьютера";

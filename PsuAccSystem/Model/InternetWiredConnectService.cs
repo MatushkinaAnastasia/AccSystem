@@ -8,6 +8,7 @@ namespace PsuAccSystem.Forms.Pages
 {
 	internal class InternetWiredConnectService : IService, INotifyPropertyChanged
 	{
+		public static readonly string ServiceName = "Подключение проводного интернета";
 		public InternetWiredConnectService()
 		{
 			Name = "Подключение проводного интернета";

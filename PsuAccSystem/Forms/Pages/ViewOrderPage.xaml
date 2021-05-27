@@ -63,7 +63,7 @@
                 <DataGridTextColumn Header="Дата" 
                                     Binding="{Binding Date, StringFormat={}{0:d}}"/>
                 <DataGridTextColumn Header="Время" 
-                                    Binding="{Binding Date, StringFormat={}{0:t}}"/>
+                                    Binding="{Binding Time, StringFormat={}{0:t}}"/>
             </DataGrid.Columns>
 
             <DataGrid.InputBindings>

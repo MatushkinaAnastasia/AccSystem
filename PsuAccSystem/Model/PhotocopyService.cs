@@ -6,6 +6,7 @@ namespace PsuAccSystem.Forms.Pages
 {
 	public class PhotocopyService : IService, INotifyPropertyChanged
 	{
+		public static readonly string ServiceName = "Ксерокопия";
 		public PhotocopyService()
 		{
 			Name = "Ксерокопия";

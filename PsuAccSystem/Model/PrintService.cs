@@ -8,6 +8,7 @@ namespace PsuAccSystem.Model
 {
 	public class PrintService: IService, INotifyPropertyChanged 
 	{
+		public static readonly string ServiceName = "Печать А4";
 		public PrintService()
 		{
 			Name = "Печать А4";

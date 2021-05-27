@@ -22,6 +22,6 @@ namespace PsuAccSystem.Model
 		public string ThirdName { get; set; }
 		public string Email { get; set; }
 		public string PhoneNumber { get; set; }
-		public string FIO => $"{Name} {SurName} {ThirdName}";
+		public string FIO => $"{SurName} {Name} {ThirdName}";
 	}
 }

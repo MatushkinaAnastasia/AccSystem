@@ -18,6 +18,6 @@
 		public string ThirdName { get; set; }
 		public string Login { get; set; }
 		public string Password { get; set; }
-		public string FIO => $"{Name} {SurName} {ThirdName}";
+		public string FIO => $"{SurName} {Name} {ThirdName}";
 	}
 }

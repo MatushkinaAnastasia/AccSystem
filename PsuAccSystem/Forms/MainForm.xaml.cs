@@ -3,6 +3,7 @@ using PsuAccSystem.Interfaces;
 using PsuAccSystem.Model;
 using PsuAccSystem.Tools;
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,6 +36,10 @@ namespace PsuAccSystem.Forms
 		public ICommand ExitCommand { get; private set; }
 		public ICommand OpenClientsTableCommand { get; private set; }
 		public ICommand OpenOrdersTableCommand { get; private set; }
+
+		public string SearchText { get; set; }
+
+		public ObservableCollection<Order> Orders => Data.Instance.Orders;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

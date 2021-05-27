@@ -6,6 +6,7 @@ namespace PsuAccSystem.Forms.Pages
 {
 	internal class PsuEmailProvideService : IService, INotifyPropertyChanged
 	{
+		public static readonly string ServiceName = "Предостовления почты";
 		public PsuEmailProvideService()
 		{
 			Name = "Предостовления почты на домене @psu.ru";

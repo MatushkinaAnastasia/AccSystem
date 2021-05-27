@@ -6,6 +6,7 @@ namespace PsuAccSystem.Forms.Pages
 {
 	internal class WiFiConnectService : IService, INotifyPropertyChanged
 	{
+		public static readonly string ServiceName = "Подключение беспроводного интернета";
 		public WiFiConnectService()
 		{
 			Name = "Подключение беспроводного интернета";

@@ -6,6 +6,7 @@ namespace PsuAccSystem.Forms.Pages
 {
 	internal class PermitMakeService : IService, INotifyPropertyChanged
 	{
+		public static readonly string ServiceName = "Изготовление пропуска";
 		public PermitMakeService()
 		{
 			Name = "Изготовление пропуска";

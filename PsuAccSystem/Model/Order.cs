@@ -26,5 +26,6 @@ namespace PsuAccSystem.Model
 		public DateTime Date { get; set; }
 		public DateTime Time { get; set; }
 		public string Status { get; set; }
+		public string FullOrder => $"{Service} {Customer.FIO}";
 	}
 }

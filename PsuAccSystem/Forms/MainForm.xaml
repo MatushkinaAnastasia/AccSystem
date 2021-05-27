@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PsuAccSystem.Forms"
+        xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoComplete"
+        xmlns:local="clr-namespace:PsuAccSystem.Forms" xmlns:dotNetKitControls="clr-namespace:DotNetKit.Windows.Controls;assembly=DotNetKit.Wpf.AutoCompleteComboBox"
         mc:Ignorable="d"
         Title="Система учета заказов Интернет-Центра ПГНИУ" 
         Height="503" 
@@ -22,9 +23,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            
+
             <Menu Grid.Column="0"
-                  VerticalAlignment="Center">
+                VerticalAlignment="Center">
                 <MenuItem Header="Клиенты">
                     <MenuItem Header="Таблица клиентов" 
                               Command="{Binding OpenClientsTableCommand}"/>
@@ -45,18 +46,19 @@
                 <MenuItem Header="⟳" FontSize="16" ToolTip="Обновить таблицу"></MenuItem>
             </Menu>
 
-            <Menu Grid.Column="2"
-                  VerticalAlignment="Center">
-                <MenuItem>
-                    <MenuItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="🔍 "/>
-                            <TextBox Width="150"
-                                     ToolTip="Поиск по заказам"/>
-                        </StackPanel>
-                    </MenuItem.Header>
-                </MenuItem>
-            </Menu>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Grid.Column="1">
+                <TextBlock Text="🔍 "/>
+                <dotNetKitControls:AutoCompleteComboBox
+                                        Width="200"
+                                        SelectedValuePath="Id"
+                                        TextSearch.TextPath="FullOrder"
+                                        ItemsSource="{Binding Orders}"
+                                        SelectedItem="{Binding SearchText}"
+                                        DisplayMemberPath="FullOrder"
+                                        ToolTip="Поиск по заказам"/>
+            </StackPanel>
         </Grid>
 
         <Frame Grid.Row="1"
