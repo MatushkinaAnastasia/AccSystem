@@ -26,6 +26,11 @@ namespace PsuAccSystem.Model
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
+		public void Clear()
+		{
+			
+		}
+
 		public double GetCost()
 		{
 			return PageCost * PageCount;

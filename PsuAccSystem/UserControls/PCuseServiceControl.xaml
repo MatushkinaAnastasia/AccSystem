@@ -23,8 +23,7 @@
                        HorizontalAlignment="Left"/>
                 <StackPanel Orientation="Horizontal"
                             Grid.Row="1">
-                    <TextBox Text="{Binding Time}"
-                             IsReadOnly="True"
+                    <TextBox Text="{Binding Time, UpdateSourceTrigger=PropertyChanged}"
                              Width="200"
                              Height="25"
                              VerticalContentAlignment="Center"/>

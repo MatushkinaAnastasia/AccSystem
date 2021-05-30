@@ -10,5 +10,6 @@ namespace PsuAccSystem.Interfaces
 		public string Name { get; set; }
 		public Client Client { get; set; }
 		public double GetCost();
+		public void Clear();
 	}
 }

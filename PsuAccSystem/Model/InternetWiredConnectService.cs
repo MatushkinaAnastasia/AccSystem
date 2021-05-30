@@ -25,6 +25,11 @@ namespace PsuAccSystem.Forms.Pages
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
+		public void Clear()
+		{
+			Client = null;
+		}
+
 		public double GetCost()
 		{
 			return Tarif.Cost;

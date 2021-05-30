@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:PsuAccSystem.Forms" xmlns:dotNetKitControls="clr-namespace:DotNetKit.Windows.Controls;assembly=DotNetKit.Wpf.AutoCompleteComboBox"
         mc:Ignorable="d"
         Title="Система учета заказов Интернет-Центра ПГНИУ" 
-        Height="503" 
-        Width="900">
+        Height="533" 
+        Width="1020">
     <Grid Style="{StaticResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -52,7 +52,6 @@
                 <TextBlock Text="🔍 "/>
                 <dotNetKitControls:AutoCompleteComboBox
                                         Width="200"
-                                        SelectedValuePath="Id"
                                         TextSearch.TextPath="FullOrder"
                                         ItemsSource="{Binding Orders}"
                                         SelectedItem="{Binding SearchText}"

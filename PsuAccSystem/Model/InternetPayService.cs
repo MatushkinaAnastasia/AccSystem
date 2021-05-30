@@ -12,6 +12,8 @@ namespace PsuAccSystem.Model
 	{
 		public static readonly string ServiceName = "Оплата интернета";
 
+		public static readonly string type = nameof(InternetPayService);
+
 		public InternetPayService()
 		{
 			Name = ServiceName;
@@ -30,7 +32,11 @@ namespace PsuAccSystem.Model
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public string ClientName { get; set; }
-		public ObservableCollection<string> TestItems { get; private set; }
+
+		public void Clear()
+		{
+			Client = null;
+		}
 
 		public double GetCost()
 		{

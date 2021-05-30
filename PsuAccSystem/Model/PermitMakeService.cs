@@ -17,6 +17,11 @@ namespace PsuAccSystem.Forms.Pages
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
+		public void Clear()
+		{
+	
+		}
+
 		public double GetCost()
 		{
 			return 200;

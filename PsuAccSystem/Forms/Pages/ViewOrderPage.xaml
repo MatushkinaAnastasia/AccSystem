@@ -94,11 +94,13 @@
                         <TextBlock Text="c:"
                                    Foreground="White"
                                    FontWeight="Bold"/>
-                        <DatePicker BorderThickness="0"/>
+                        <DatePicker BorderThickness="0"
+                                    SelectedDate="{Binding DateFirst, UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBlock Text="по:"
                                    Foreground="White"
                                    FontWeight="Bold"/>
-                        <DatePicker BorderThickness="0"/>
+                        <DatePicker BorderThickness="0"
+                                    SelectedDate="{Binding DateSecond, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Grid>
             </Border>

@@ -1,5 +1,6 @@
 ﻿using PsuAccSystem.Interfaces;
 using PsuAccSystem.Model;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -19,15 +20,20 @@ namespace PsuAccSystem.Forms.Pages
 
 		public string Name { get; set; }
 		public int Time { get; set; }
-		public double PsuUseCost { get; set; }
 		public ObservableCollection<Client> Clients => Data.Instance.Clients;
 		public Client Client { get; set; }
 
 		public event PropertyChangedEventHandler PropertyChanged;
+		public double PsuUseCost { get => GetCost(); set => GetCost(); }
+
+		public void Clear()
+		{
+			
+		}
 
 		public double GetCost()
 		{
-			return PsuUseCost * Time;
+			return Math.Round(0.7 * Time, 2);
 		}
 	}
 }

@@ -46,7 +46,7 @@
                            Style="{StaticResource LabelOrder}"/>
                     <Label Content="Услуга"
                            Style="{StaticResource LabelOrder}"/>
-                    <Label Content="Заказчик"
+                    <Label Content="Клиент"
                            Style="{StaticResource LabelOrder}"/>
                     <Label Content="Стоимость"
                            Style="{StaticResource LabelOrder}"/>
@@ -61,7 +61,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
-                    <TextBox Text="{Binding ThisOrder.Id}"
+                    <TextBox Text="{Binding ThisOrder.Id, UpdateSourceTrigger=PropertyChanged}"
                              IsReadOnly="{Binding IsReadOnly}"
                              Style="{StaticResource TextBoxOrder}"
                              Background="{Binding BackgroundTB}"/>
@@ -89,7 +89,7 @@
                              IsReadOnly="true"
                              Style="{StaticResource TextBoxOrder}"
                              Background="{Binding BackgroundTB}"/>
-                    <TextBox Text="{Binding ThisOrder.Status}"
+                    <TextBox Text="{Binding ThisOrder.Status, UpdateSourceTrigger=PropertyChanged}"
                              IsReadOnly="{Binding IsReadOnly}"
                              Style="{StaticResource TextBoxOrder}"
                              Background="{Binding BackgroundTB}"/>
