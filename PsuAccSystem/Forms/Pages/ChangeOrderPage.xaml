@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:PsuAccSystem.Forms.Pages"
+      xmlns:local="clr-namespace:PsuAccSystem.Forms.Pages" xmlns:dotNetKitControls="clr-namespace:DotNetKit.Windows.Controls;assembly=DotNetKit.Wpf.AutoCompleteComboBox"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Подробная информация о заказе">
@@ -60,40 +60,82 @@
                            Style="{StaticResource LabelOrder}"/>
                 </StackPanel>
 
-                <StackPanel Grid.Column="1">
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
                     <TextBox Text="{Binding ThisOrder.Id, UpdateSourceTrigger=PropertyChanged}"
-                             IsReadOnly="{Binding IsReadOnly}"
-                             Style="{StaticResource TextBoxOrder}"
-                             Background="{Binding BackgroundTB}"/>
+                            IsReadOnly="True"
+                            Background="{Binding BackgroundTB}"
+                            Style="{StaticResource TextBoxOrder}"
+                            Grid.Row="0"/>
                     <TextBox Text="{Binding ThisOrder.Service}"
-                             IsReadOnly="{Binding IsReadOnly}"
-                             Style="{StaticResource TextBoxOrder}"
-                             Background="{Binding BackgroundTB}"/>
-                    <TextBox Text="{Binding ThisOrder.Customer.FIO, Mode=OneWay}"
-                             IsReadOnly="{Binding IsReadOnly}"
-                             Style="{StaticResource TextBoxOrder}"
-                             Background="{Binding BackgroundTB}"/>
+                            IsReadOnly="True"
+                            Style="{StaticResource TextBoxOrder}"
+                            Background="{Binding BackgroundTB}"
+                            Grid.Row="1"/>
+                    <dotNetKitControls:AutoCompleteComboBox 
+                            Style="{DynamicResource AutoCompleteComboBoxStyle1}" 
+                            TextSearch.TextPath="FIO"
+                            ItemsSource="{Binding Clients}"
+                            SelectedItem="{Binding Client}"
+                            DisplayMemberPath="FIO"
+                            Width="300"
+                            Height="24"
+                            VerticalContentAlignment="Center"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            FontSize="16"
+                            IsEnabled="{Binding IsEditable}"
+                            Name="ComboboxClients"
+                            Grid.Row="2"/>
+                    <TextBox Text="{Binding ThisClient}"
+                            IsReadOnly="True"
+                            Style="{StaticResource TextBoxOrder}"
+                            Background="#EEEEEE"
+                            Visibility="Hidden"
+                            Name="HiddenTextBox"
+                            Grid.Row="2"/>
                     <TextBox Text="{Binding ThisOrder.Price}"
-                             IsReadOnly="{Binding IsReadOnly}"
-                             Style="{StaticResource TextBoxOrder}"
-                             Background="{Binding BackgroundTB}"/>
+                            IsReadOnly="True"
+                            Background="{Binding BackgroundTB}"
+                            Style="{StaticResource TextBoxOrder}"
+                            Grid.Row="3"/>
                     <TextBox Text="{Binding CurrentWorker, Mode=OneWay}"
-                             Style="{StaticResource TextBoxOrder}"
-                             Background="{Binding BackgroundTB}"
-                             IsReadOnly="True"/>
+                            Style="{StaticResource TextBoxOrder}"
+                            IsReadOnly="True"
+                            Background="{Binding BackgroundTB}"
+                            Grid.Row="4"/>
                     <TextBox Text="{Binding ThisOrder.Date, StringFormat={}{0:d}}"
-                             IsReadOnly="True"
-                             Style="{StaticResource TextBoxOrder}"
-                             Background="{Binding BackgroundTB}"/>
+                            IsReadOnly="True"
+                            Style="{StaticResource TextBoxOrder}"
+                            Background="{Binding BackgroundTB}"
+                            Grid.Row="5"/>
                     <TextBox Text="{Binding ThisOrder.Time, StringFormat={}{0:t}}"
-                             IsReadOnly="true"
-                             Style="{StaticResource TextBoxOrder}"
-                             Background="{Binding BackgroundTB}"/>
-                    <TextBox Text="{Binding ThisOrder.Status, UpdateSourceTrigger=PropertyChanged}"
-                             IsReadOnly="{Binding IsReadOnly}"
-                             Style="{StaticResource TextBoxOrder}"
-                             Background="{Binding BackgroundTB}"/>
-                </StackPanel>
+                            IsReadOnly="True"
+                            Style="{StaticResource TextBoxOrder}"
+                            Background="{Binding BackgroundTB}"
+                            Grid.Row="6"/>
+                    <dotNetKitControls:AutoCompleteComboBox 
+                            Style="{DynamicResource AutoCompleteComboBoxStyle1}" 
+                            ItemsSource="{Binding Statuses}"
+                            SelectedItem="{Binding Status}"
+                            Width="300"
+                            Height="25"
+                            VerticalContentAlignment="Center"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            FontSize="16"
+                            IsEnabled="{Binding IsEditable}"
+                            Grid.Row="7"/>
+                </Grid>
             </Grid>
         </Grid>
 

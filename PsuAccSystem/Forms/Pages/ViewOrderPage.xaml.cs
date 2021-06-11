@@ -42,7 +42,8 @@ namespace PsuAccSystem.Forms.Pages
 
 		public ICommand AddOrderCommand { get; private set; }
 		public ICommand ChangeOrderCommand { get; private set; }
-		public ObservableCollection<Order> Orders => new ObservableCollection<Order>(Data.Instance.Orders.Where(x => x.Date >= DateFirst && x.Date <= DateSecond));
+		public ObservableCollection<Order> Orders => Data.Instance.Orders;
+		//public ObservableCollection<Order> Orders => new ObservableCollection<Order>(Data.Instance.Orders.Where(x => x.Date >= DateFirst && x.Date <= DateSecond));
 		public Order SelectedOrder { get; set; }
 		public DateTime DateFirst { get; set; }
 		public DateTime DateSecond 

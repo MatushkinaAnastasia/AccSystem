@@ -13,6 +13,12 @@ namespace PsuAccSystem.Model
 			
 		}
 
+		//public enum Status 
+		//{ 
+		//	InProcess,
+		//	Done
+		//};
+
 		private void InitializeObjects()
 		{
 			Clients = new ObservableCollection<Client>
@@ -37,8 +43,8 @@ namespace PsuAccSystem.Model
 
 			Orders = new ObservableCollection<Order>
 			{
-				new Order(1, InternetPayService.ServiceName, Clients[1], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(5), "Поступил"),
-				new Order(2, PCuseService.ServiceName, Clients[1], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(10), "Ожидает оплаты"),
+				new Order(1, InternetPayService.ServiceName, Clients[1], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(5), "В обработке"),
+				new Order(2, PCuseService.ServiceName, Clients[1], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(10), "В обработке"),
 				new Order(3, PermitMakeService.ServiceName, Clients[2], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(15), "В обработке"),
 				new Order(4, PrintService.ServiceName, Clients[0], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(20), "В обработке"),
 				new Order(5, PhotocopyService.ServiceName, Clients[0], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(25), "В обработке"),
@@ -58,12 +64,21 @@ namespace PsuAccSystem.Model
 				new Order(19, InternetPayService.ServiceName, Clients[2], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(15), "В обработке"),
 				new Order(20, InternetPayService.ServiceName, Clients[2], Workers[1], "150", DateTime.Now, DateTime.Now + TimeSpan.FromMinutes(15), "В обработке"),
 			};
+
+
+			Statuses = new ObservableCollection<string>
+			{
+				"В обработке", 
+				"Выполнен",
+				"Поступил",
+			};
 		}
 
 		public ObservableCollection<Order> Orders { get; private set; }
 		public ObservableCollection<Client> Clients { get; private set; }
 		public ObservableCollection<Worker> Workers { get; private set; }
 		public Worker CurrentWorker { get; set; }
+		public ObservableCollection<string> Statuses { get; set; }
 
 
 
