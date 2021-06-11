@@ -56,9 +56,14 @@ namespace PsuAccSystem.Forms.Pages
 			var result = MessageBox.Show("Вы уверены, что хотите удалить заказ?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
 			if (result == MessageBoxResult.Yes)
 			{
-				Data.Instance.Orders.Remove(ThisOrder);
-				MessageBox.Show("Заказ удален успешно!");
-				NavigationService.GoBack();
+				var deleteReason = new DeletionReason();
+				deleteReason.ShowDialog();
+				if (deleteReason.DialogResult == true)
+				{
+					MessageBox.Show("Заказ удален успешно!");
+					Data.Instance.Orders.Remove(ThisOrder);
+					NavigationService.GoBack();
+				}
 			}
 		}
 		private void ChangeOrder()

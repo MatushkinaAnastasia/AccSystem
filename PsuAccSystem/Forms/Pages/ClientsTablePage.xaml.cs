@@ -50,8 +50,13 @@ namespace PsuAccSystem.Forms.Pages
 				var result = MessageBox.Show("Вы уверены, что хотите удалить все данные об этом клиенте?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
 				if (result == MessageBoxResult.Yes)
 				{
-					Data.Instance.Clients.Remove(SelectedClient);
-					MessageBox.Show("Данные о клиенте удалены успешно!");
+					var deleteReason = new DeletionReason();
+					deleteReason.ShowDialog();
+					if (deleteReason.DialogResult == true)
+					{
+						MessageBox.Show("Данные о клиенте удалены успешно!");
+						Data.Instance.Clients.Remove(SelectedClient);
+					}
 				}
 			}
 		}

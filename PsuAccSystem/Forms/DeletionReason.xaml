@@ -1,0 +1,39 @@
+﻿<Window x:Class="PsuAccSystem.Forms.DeletionReason"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PsuAccSystem.Forms"
+        mc:Ignorable="d"
+        Title="" 
+        Height="200" 
+        Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid Style="{StaticResource GridStyle}">
+        <StackPanel VerticalAlignment="Center">
+            <Label Background="{StaticResource DarkGray}"
+                   Padding="3"
+                   Content="Укажите, пожалуйста, причину удаления ниже!"
+                   Width="auto"
+                   Margin="0,0,0,15"/>
+            <TextBox Style="{StaticResource AuthTextBox}"
+                     Width="auto"
+                     Margin="0,0,0,15"
+                     Text="{Binding Reason, Mode=TwoWay}"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button Content="✉️"
+                        Style="{StaticResource AuthButton}"
+                        ToolTip="Отправить сообщение о причине удаления"
+                        Background="{StaticResource Green}"
+                        FontWeight="Bold"
+                        FontSize="16"
+                        Click="SendMessage"/>
+                <Button Content="Отмена"
+                        Style="{StaticResource AuthButton}"
+                        Margin="15,0,0,0"
+                        Click="Cancel"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
