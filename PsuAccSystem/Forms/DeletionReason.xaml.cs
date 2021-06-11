@@ -29,10 +29,10 @@ namespace PsuAccSystem.Forms
 		{
 			if (string.IsNullOrWhiteSpace(Reason))
 			{
-				MessageBox.Show("Уважаемый(-ая), " + Data.Instance.CurrentWorker.Name + Data.Instance.CurrentWorker.ThirdName + "! Укажите, пожалуйста, причину удаления в текстовом поле!");
+				MessageBox.Show("Уважаемый(-ая), " + Data.Instance.CurrentWorker.Name + " " + Data.Instance.CurrentWorker.ThirdName + "! Укажите, пожалуйста, причину удаления в текстовом поле!");
 			} else if (Reason.Length < 10)
 			{
-				MessageBox.Show("Уважаемый(-ая), " + Data.Instance.CurrentWorker.Name + Data.Instance.CurrentWorker.ThirdName + "! Опишите, пожалуйста, причину более подробно.");
+				MessageBox.Show("Уважаемый(-ая), " + Data.Instance.CurrentWorker.Name + " " + Data.Instance.CurrentWorker.ThirdName + "! Опишите, пожалуйста, причину более подробно.");
 			} else
 			{
 				MessageBox.Show("Причина сохранена! Спасибо.");

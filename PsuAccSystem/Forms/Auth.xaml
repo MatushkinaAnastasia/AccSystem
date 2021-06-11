@@ -48,8 +48,8 @@
                     <Label Content="Пароль"
                            Width="auto"/>
                 </Grid>
-                <TextBox Style="{StaticResource AuthTextBox}"
-                         Text="{Binding Password}"/>
+                
+                <PasswordBox PasswordChanged="PasswordBox_PasswordChanged"/>
             </StackPanel>
 
             <Button Style="{StaticResource AuthButton}"

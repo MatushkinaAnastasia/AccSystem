@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,11 +30,17 @@ namespace PsuAccSystem.Forms
 		}
 
 		public string Login { get; set; } = string.Empty;
-		public string Password { get; set; } = string.Empty;
+		public string Password { private get; set; }
+		//public SecureString SecurePassword { private get; set; }
 		public ObservableCollection<Worker> Workers => Data.Instance.Workers;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
+		private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+		{
+			if (DataContext != null)
+			{ ((dynamic)DataContext).Password = ((PasswordBox)sender).Password; }
+		}
 		private void Enter(object sender, RoutedEventArgs e)
 		{
 			var worker = Workers.FirstOrDefault(x => x.Login == Login);

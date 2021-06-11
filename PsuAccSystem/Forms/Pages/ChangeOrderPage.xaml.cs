@@ -70,6 +70,7 @@ namespace PsuAccSystem.Forms.Pages
 		{
 			if (IsReadOnly == true)
 			{
+				Client = ThisOrder.Customer;
 				IsReadOnly = false;
 				ColorButton = new SolidColorBrush(Color.FromArgb(255, 29, 192, 62));
 				ContentButton = "✔️";
@@ -80,15 +81,21 @@ namespace PsuAccSystem.Forms.Pages
 			}
 			else
 			{
-				IsReadOnly = true;
-				ColorButton = new SolidColorBrush(Color.FromArgb(255, 226, 127, 27));
-				ContentButton = "🖊";
-				BackgroundTB = new SolidColorBrush(Color.FromArgb(255, 238, 238, 238));
-				IsEditable = false;
-				ComboboxClients.Visibility = Visibility.Hidden;
-				HiddenTextBox.Visibility = Visibility.Visible;
-				HiddenTextBox.Text = Client.FIO;
-				Client = null;
+				if (Client == null)
+				{
+					MessageBox.Show("Пожалуйста, выберите клиента.");
+				} else
+				{
+					IsReadOnly = true;
+					ColorButton = new SolidColorBrush(Color.FromArgb(255, 226, 127, 27));
+					ContentButton = "🖊";
+					BackgroundTB = new SolidColorBrush(Color.FromArgb(255, 238, 238, 238));
+					IsEditable = false;
+					ComboboxClients.Visibility = Visibility.Hidden;
+					HiddenTextBox.Visibility = Visibility.Visible;
+					HiddenTextBox.Text = Client.FIO;
+					Client = null;
+				}
 			}
 		}
 	}
