@@ -2,6 +2,8 @@
 using PsuAccSystem.Interfaces;
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
 
 namespace PsuAccSystem.Model
 {
@@ -10,15 +12,9 @@ namespace PsuAccSystem.Model
 		private Data()
 		{
 			InitializeObjects();
-			
+			Orders.CollectionChanged += (s, e) => Filter = filter;
+			Filter = string.Empty;
 		}
-
-		//public enum Status 
-		//{ 
-		//	InProcess,
-		//	Done
-		//};
-
 		private void InitializeObjects()
 		{
 			Clients = new ObservableCollection<Client>
@@ -68,18 +64,68 @@ namespace PsuAccSystem.Model
 
 			Statuses = new ObservableCollection<string>
 			{
-				"В обработке", 
+				"В обработке",
 				"Выполнен",
 				"Поступил",
 			};
 		}
 
-		public ObservableCollection<Order> Orders { get; private set; }
+
+		public ObservableCollection<Order> FilteredOrders { get; private set; } = new ObservableCollection<Order>();
+		public string Filter
+		{
+			get => filter;
+			set
+			{
+				filter = value;
+				if (filter == null) filter = string.Empty;
+
+				UpdateFilter();
+			}
+		}
+		public DateTime DateFirst
+		{
+			get => dateFirst;
+			set
+			{
+				dateFirst = value;
+				UpdateFilter();
+			}
+		}
+		public DateTime DateSecond
+		{
+			get => dateSecond;
+			set
+			{
+				dateSecond = value;
+				UpdateFilter();
+			}
+		}
+		private void UpdateFilter()
+		{
+			FilteredOrders.Clear();
+			var f = filter.ToLower();
+
+			foreach (var order in Orders)
+			{
+				if (order.FullOrder.ToLower().Contains(f) && dateFirst <= order.Date && dateSecond >= order.Date)
+				{
+					FilteredOrders.Add(order);
+				}
+			}
+		}
+
+
+		public ObservableCollection<Order> Orders { get; set; }
 		public ObservableCollection<Client> Clients { get; private set; }
 		public ObservableCollection<Worker> Workers { get; private set; }
 		public Worker CurrentWorker { get; set; }
 		public ObservableCollection<string> Statuses { get; set; }
 
+
+		private string filter;
+		private DateTime dateFirst;
+		private DateTime dateSecond;
 
 
 		private static Data _instance;

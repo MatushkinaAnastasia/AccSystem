@@ -18,6 +18,7 @@ namespace PsuAccSystem.Forms.Pages
 	{
 		private readonly IPageHandler pageHandler;
 		private DateTime dateSecond;
+		private DateTime dateFirst;
 
 		public ViewOrderPage(IPageHandler pageHandler)
 		{
@@ -29,30 +30,29 @@ namespace PsuAccSystem.Forms.Pages
 			DateFirst = DateTime.Now.Date;
 			DateSecond = DateTime.Now.Date;
 
-			Data.Instance.Orders.CollectionChanged += Orders_CollectionChanged;
-
 			DataContext = this;
 			this.pageHandler = pageHandler;
 		}
 
-		private void Orders_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Orders)));
-		}
-
 		public ICommand AddOrderCommand { get; private set; }
 		public ICommand ChangeOrderCommand { get; private set; }
-		public ObservableCollection<Order> Orders => Data.Instance.Orders;
-		//public ObservableCollection<Order> Orders => new ObservableCollection<Order>(Data.Instance.Orders.Where(x => x.Date >= DateFirst && x.Date <= DateSecond));
+
+		public ObservableCollection<Order> Orders => Data.Instance.FilteredOrders;
+
+		//public ObservableCollection<Order> Orders =>  new ObservableCollection<Order> (AllOrders.Where(x => x.Date >= DateFirst && x.Date <= DateSecond));
+		//public ObservableCollection<Order> Orders { get => Data.Instance.Orders; set => new ObservableCollection<Order>(Data.Instance.Orders.Where(x => x.Date >= DateFirst && x.Date <= DateSecond)); }
 		public Order SelectedOrder { get; set; }
-		public DateTime DateFirst { get; set; }
-		public DateTime DateSecond 
-		{ 
-			get => dateSecond;
-			set
-			{
-				dateSecond = value + TimeSpan.FromDays(1) - TimeSpan.FromSeconds(1);
-			}
+
+		public DateTime DateFirst
+		{
+			get => Data.Instance.DateFirst;
+			set => Data.Instance.DateFirst = value;
+		}
+
+		public DateTime DateSecond
+		{
+			get => Data.Instance.DateSecond;
+			set => Data.Instance.DateSecond = value + TimeSpan.FromDays(1) - TimeSpan.FromSeconds(1);
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;

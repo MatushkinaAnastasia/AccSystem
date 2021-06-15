@@ -5,6 +5,7 @@ using PsuAccSystem.Tools;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -19,7 +20,7 @@ namespace PsuAccSystem.Forms
 		public MainForm()
 		{
 			InitializeComponent();
-			
+
 			MainPage = new ViewOrderPage(this);
 			ExitCommand = new RelayCommand(Exit);
 			OpenClientsTableCommand = new RelayCommand(OpenClientsTable);
@@ -37,9 +38,11 @@ namespace PsuAccSystem.Forms
 		public ICommand OpenClientsTableCommand { get; private set; }
 		public ICommand OpenOrdersTableCommand { get; private set; }
 
-		public string SearchText { get; set; }
-
-		public ObservableCollection<Order> Orders => Data.Instance.Orders;
+		public string FilterText 
+		{ 
+			get => Data.Instance.Filter; 
+			set => Data.Instance.Filter = value; 
+		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

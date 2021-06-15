@@ -50,13 +50,8 @@
                         HorizontalAlignment="Right"
                         Grid.Column="1">
                 <TextBlock Text="🔍 "/>
-                <dotNetKitControls:AutoCompleteComboBox
-                                        Width="200"
-                                        TextSearch.TextPath="FullOrder"
-                                        ItemsSource="{Binding Orders}"
-                                        SelectedItem="{Binding SearchText}"
-                                        DisplayMemberPath="FullOrder"
-                                        ToolTip="Поиск по заказам"/>
+                <TextBox Width="200"
+                         Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
         </Grid>
 

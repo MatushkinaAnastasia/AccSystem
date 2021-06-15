@@ -88,17 +88,20 @@
                                HorizontalAlignment="Center"
                                Grid.Row="0"
                                Foreground="White"
-                               FontWeight="Bold"/>
+                               FontWeight="Bold"
+                               FontSize="14"/>
                     <StackPanel Grid.Row="1"
                             Orientation="Horizontal">
                         <TextBlock Text="c:"
                                    Foreground="White"
-                                   FontWeight="Bold"/>
+                                   FontWeight="Bold"
+                                   FontSize="14"/>
                         <DatePicker BorderThickness="0"
                                     SelectedDate="{Binding DateFirst, UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBlock Text="по:"
                                    Foreground="White"
-                                   FontWeight="Bold"/>
+                                   FontWeight="Bold"
+                                   FontSize="14"/>
                         <DatePicker BorderThickness="0"
                                     SelectedDate="{Binding DateSecond, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
