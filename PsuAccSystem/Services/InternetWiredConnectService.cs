@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
-namespace PsuAccSystem.Forms.Pages
+namespace PsuAccSystem.Services
 {
 	internal class InternetWiredConnectService : IService, INotifyPropertyChanged
 	{

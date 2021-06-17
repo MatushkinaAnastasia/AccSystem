@@ -27,7 +27,7 @@ namespace PsuAccSystem.Forms.Pages
 			DataContext = this;
 		}
 
-		public string Name { get; set; }
+		public string	ClName { get; set; }
 		public string SurName { get; set; }
 		public string ThirdName { get; set; }
 		public string Email { get; set; }
@@ -37,7 +37,7 @@ namespace PsuAccSystem.Forms.Pages
 
 		private void AddClient(object sender, RoutedEventArgs e)
 		{
-			var client = new Client(10, Name, SurName, ThirdName, Email, PhoneNumber);
+			var client = new Client(10, ClName, SurName, ThirdName, Email, PhoneNumber);
 			Data.Instance.Clients.Add(client);
 			MessageBox.Show("Информация о клиенте успешно добавлена в список!");
 			NavigationService.GoBack();

@@ -1,4 +1,5 @@
 ﻿using PsuAccSystem.Interfaces;
+using PsuAccSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,7 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace PsuAccSystem.Model
+namespace PsuAccSystem.Services
 {
 	public class InternetPayService: IService, INotifyPropertyChanged
 	{

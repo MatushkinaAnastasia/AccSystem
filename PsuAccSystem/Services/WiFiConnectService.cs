@@ -2,14 +2,14 @@
 using PsuAccSystem.Model;
 using System.ComponentModel;
 
-namespace PsuAccSystem.Forms.Pages
+namespace PsuAccSystem.Services
 {
-	internal class PermitMakeService : IService, INotifyPropertyChanged
+	internal class WiFiConnectService : IService, INotifyPropertyChanged
 	{
-		public static readonly string ServiceName = "Изготовление пропуска";
-		public PermitMakeService()
+		public static readonly string ServiceName = "Подключение беспроводного интернета";
+		public WiFiConnectService()
 		{
-			Name = "Изготовление пропуска";
+			Name = "Подключение беспроводного интернета";
 		}
 
 		public string Name { get; set; }
@@ -19,12 +19,12 @@ namespace PsuAccSystem.Forms.Pages
 
 		public void Clear()
 		{
-	
+			
 		}
 
 		public double GetCost()
 		{
-			return 200;
+			return 300;
 		}
 	}
 }

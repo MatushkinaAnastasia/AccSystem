@@ -1,20 +1,17 @@
 ﻿using PsuAccSystem.Interfaces;
-using System;
-using System.Collections.Generic;
+using PsuAccSystem.Model;
 using System.ComponentModel;
-using System.Text;
 
-namespace PsuAccSystem.Model
+namespace PsuAccSystem.Services
 {
-	public class PrintService: IService, INotifyPropertyChanged 
+	public class PhotocopyService : IService, INotifyPropertyChanged
 	{
-		public static readonly string ServiceName = "Печать А4";
-		public PrintService()
+		public static readonly string ServiceName = "Ксерокопия";
+		public PhotocopyService()
 		{
-			Name = "Печать А4";
-			PageCost = 3; // 3 рубля лист
-			PageCount = 1;
-			Client = new Client(0, "*", "*", "*", "*", "*");
+			Name = "Ксерокопия";
+			PageCost = 2; // 2 рубля лист
+			Client = new Client(0, "*","*","*","*","*");
 		}
 
 		public string Name { get; set; }

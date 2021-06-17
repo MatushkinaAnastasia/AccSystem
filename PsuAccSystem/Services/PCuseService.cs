@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
-namespace PsuAccSystem.Forms.Pages
+namespace PsuAccSystem.Services
 {
 	public class PCuseService : IService, INotifyPropertyChanged
 	{

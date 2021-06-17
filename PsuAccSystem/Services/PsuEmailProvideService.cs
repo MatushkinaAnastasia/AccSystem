@@ -2,14 +2,14 @@
 using PsuAccSystem.Model;
 using System.ComponentModel;
 
-namespace PsuAccSystem.Forms.Pages
+namespace PsuAccSystem.Services
 {
-	internal class WiFiConnectService : IService, INotifyPropertyChanged
+	internal class PsuEmailProvideService : IService, INotifyPropertyChanged
 	{
-		public static readonly string ServiceName = "Подключение беспроводного интернета";
-		public WiFiConnectService()
+		public static readonly string ServiceName = "Предостовления почты";
+		public PsuEmailProvideService()
 		{
-			Name = "Подключение беспроводного интернета";
+			Name = "Предостовления почты на домене @psu.ru";
 		}
 
 		public string Name { get; set; }
@@ -24,7 +24,7 @@ namespace PsuAccSystem.Forms.Pages
 
 		public double GetCost()
 		{
-			return 300;
+			return 0;
 		}
 	}
 }

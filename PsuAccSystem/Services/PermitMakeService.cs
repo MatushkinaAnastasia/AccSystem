@@ -2,14 +2,14 @@
 using PsuAccSystem.Model;
 using System.ComponentModel;
 
-namespace PsuAccSystem.Forms.Pages
+namespace PsuAccSystem.Services
 {
-	internal class PsuEmailProvideService : IService, INotifyPropertyChanged
+	internal class PermitMakeService : IService, INotifyPropertyChanged
 	{
-		public static readonly string ServiceName = "Предостовления почты";
-		public PsuEmailProvideService()
+		public static readonly string ServiceName = "Изготовление пропуска";
+		public PermitMakeService()
 		{
-			Name = "Предостовления почты на домене @psu.ru";
+			Name = "Изготовление пропуска";
 		}
 
 		public string Name { get; set; }
@@ -19,12 +19,12 @@ namespace PsuAccSystem.Forms.Pages
 
 		public void Clear()
 		{
-			
+	
 		}
 
 		public double GetCost()
 		{
-			return 0;
+			return 200;
 		}
 	}
 }

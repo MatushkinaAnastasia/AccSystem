@@ -43,7 +43,7 @@
                    Width="150"
                    HorizontalAlignment="Left"/>
                 <TextBox Width="200"
-                         Text="{Binding Name}"/>
+                         Text="{Binding ClName}"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical"
