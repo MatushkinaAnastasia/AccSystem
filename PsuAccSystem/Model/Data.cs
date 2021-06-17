@@ -10,6 +10,8 @@ namespace PsuAccSystem.Model
 {
 	public class Data
 	{
+		public const string workerType = "Сотрудник";
+		public const string adminType = "Администратор";
 		private Data()
 		{
 			InitializeObjects();
@@ -32,10 +34,11 @@ namespace PsuAccSystem.Model
 				new Client(9, "Архыз", "Архызов","Архызович", "aaaaden@", "85678995578"),
 			};
 
+
 			Workers = new ObservableCollection<Worker>
 			{
-				new Worker(1, "Денис", "Лазуков", "Борисович", "denis", "123"),
-				new Worker(2, "Анастасия", "Матушкина", "Алексеевна", "nasya", "123"),
+				new Worker(1, "Денис", "Лазуков", "Борисович", "denis", "123", workerType),
+				new Worker(2, "Анастасия", "Матушкина", "Алексеевна", "nasya", "123", adminType),
 			};
 
 			Orders = new ObservableCollection<Order>
