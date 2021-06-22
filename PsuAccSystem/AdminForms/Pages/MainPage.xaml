@@ -15,15 +15,19 @@
                     Margin="50">
             <Button Style="{StaticResource AddButton}"
                     Margin="20"
-                    FontSize="30"/>
+                    FontSize="30"
+                    Command="{Binding OpenWorkersAddFormCommand}"
+                    ToolTip="Добавить сотрудника"/>
             <Button Style="{StaticResource AddButton}"
                     Margin="20"
                     Background="{StaticResource Orange}"
-                    Content="🖊"/>
+                    Content="🖊"
+                    ToolTip="Редактировать информацию о сотруднике"/>
             <Button Style="{StaticResource AddButton}"
                     Margin="20"
                     Background="{StaticResource Green}"
-                    Content="📝"/>
+                    Content="📝"
+                    ToolTip="Просмотреть информацию о всех сотрудниках"/>
         </StackPanel>
     </Grid>
 </Page>

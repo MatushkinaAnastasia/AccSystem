@@ -39,8 +39,6 @@ namespace PsuAccSystem.Forms.Pages
 
 		public ObservableCollection<Order> Orders => Data.Instance.FilteredOrders;
 
-		//public ObservableCollection<Order> Orders =>  new ObservableCollection<Order> (AllOrders.Where(x => x.Date >= DateFirst && x.Date <= DateSecond));
-		//public ObservableCollection<Order> Orders { get => Data.Instance.Orders; set => new ObservableCollection<Order>(Data.Instance.Orders.Where(x => x.Date >= DateFirst && x.Date <= DateSecond)); }
 		public Order SelectedOrder { get; set; }
 
 		public DateTime DateFirst

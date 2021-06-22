@@ -1,5 +1,4 @@
 ﻿using PsuAccSystem.Interfaces;
-using PsuAccSystem.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,29 +16,23 @@ using System.Windows.Shapes;
 namespace PsuAccSystem.AdminForms.Pages
 {
 	/// <summary>
-	/// Логика взаимодействия для MainPage.xaml
+	/// Логика взаимодействия для AddWorkersForm.xaml
 	/// </summary>
-	public partial class MainPage : Page, INotifyPropertyChanged
+	public partial class AddWorkersForm : Page, INotifyPropertyChanged
 	{
-		private readonly IPageHandler pageHandler;
-		public MainPage(IPageHandler pageHandler)
+		public string SurName { get; set; }
+		public string FirstName { get; set; }
+		public string ThirdName { get; set; }
+		public AddWorkersForm()
 		{
 			InitializeComponent();
-
-			OpenWorkersAddFormCommand = new RelayCommand(OpenAddForm);
-
 			DataContext = this;
-			this.pageHandler = pageHandler;
 		}
-
-		public ICommand OpenWorkersAddFormCommand { get; private set; }
-
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		private void OpenAddForm()
+		private void AddClient(object sender, RoutedEventArgs e)
 		{
-			pageHandler.MainPage = new AddWorkersForm();
-		}
 
+		}
 	}
 }

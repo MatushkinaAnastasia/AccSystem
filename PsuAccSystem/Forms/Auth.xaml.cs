@@ -46,7 +46,6 @@ namespace PsuAccSystem.Forms
 					var result = MessageBox.Show("Войти как администратор?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
 					if (result == MessageBoxResult.Yes)
 					{
-						MessageBox.Show("Вы в режиме администратора!");
 						var adminForm = new MainAdminForm();
 						adminForm.Show();
 						Close();

@@ -95,6 +95,7 @@ namespace PsuAccSystem.Forms.Pages
 					HiddenTextBox.Visibility = Visibility.Visible;
 					HiddenTextBox.Text = Client.FIO;
 					Client = null;
+					MessageBox.Show("Данные заказа изменены!");
 				}
 			}
 		}
